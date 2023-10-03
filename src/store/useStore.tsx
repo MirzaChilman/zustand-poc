@@ -2,12 +2,12 @@ import { create } from "zustand";
 import type { StateCreator } from "zustand";
 import { devtools } from "zustand/middleware";
 import { immer } from "zustand/middleware/immer";
-import { BearStore, useBearStore } from "./bearSlice/useBearSlice";
-import { FishStore, useFishStore } from "./fistSlice/useFishSlice";
+import { BearSlice, useBearSlice } from "./bearSlice/useBearSlice";
+import { FishSlice, useFishSlice } from "./fistSlice/useFishSlice";
 
 type State = {
-  bear: BearStore;
-  fish: FishStore;
+  bear: BearSlice;
+  fish: FishSlice;
 };
 
 export type ImmerStateCreator<T> = StateCreator<
@@ -21,8 +21,8 @@ export type ImmerStateCreator<T> = StateCreator<
 export const useStore = create<State>()(
   immer(
     devtools((...args) => ({
-      bear: useBearStore(...args),
-      fish: useFishStore(...args),
+      bear: useBearSlice(...args),
+      fish: useFishSlice(...args),
     }))
   )
 );
