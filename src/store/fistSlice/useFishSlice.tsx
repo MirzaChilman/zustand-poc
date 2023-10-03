@@ -1,5 +1,5 @@
 import { ImmerStateCreator } from "../useStore";
-export interface FishStore {
+export interface FishSlice {
   name: string;
   race: {
     name: string;
@@ -12,7 +12,7 @@ export interface FishStore {
   setFishName: (name: string) => void;
 }
 
-export const useFishStore: ImmerStateCreator<FishStore> = (set, ...rest) => {
+export const useFishSlice: ImmerStateCreator<FishSlice> = (set, ...rest) => {
   return {
     name: "",
     race: {

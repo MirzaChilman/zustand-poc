@@ -2,8 +2,8 @@ import { create } from "zustand";
 import type { StateCreator } from "zustand";
 import { devtools } from "zustand/middleware";
 import { immer } from "zustand/middleware/immer";
-import { BearStore, useBearStore } from "./bearStore/useBearStore";
-import { FishStore, useFishStore } from "./fistStore/useFishStore";
+import { BearStore, useBearStore } from "./bearSlice/useBearSlice";
+import { FishStore, useFishStore } from "./fistSlice/useFishSlice";
 
 type State = {
   bear: BearStore;

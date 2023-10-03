@@ -1,10 +1,11 @@
 "use client";
+
 import {
   useFishActionsName,
   useFishActionsType,
   useFishName,
   useFishRace,
-} from "@/store/fistStore/selector";
+} from "@/store/fistSlice/selector";
 import React from "react";
 
 const Bear = () => {

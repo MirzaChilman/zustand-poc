@@ -1,10 +1,10 @@
 import { ImmerStateCreator } from "../useStore";
 
-export interface BearStore {
+export interface BearSlice {
   name: string;
 }
 
-export const useBearStore: ImmerStateCreator<BearStore> = (set, get, api) => {
+export const useBearSlice: ImmerStateCreator<BearSlice> = (set, get, api) => {
   console.log({ set, get, api });
   return {
     name: "mirza",
