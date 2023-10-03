@@ -1,8 +1,7 @@
 "use client";
 
 import {
-  useFishActionsName,
-  useFishActionsType,
+  useFishActions,
   useFishName,
   useFishRace,
 } from "@/store/fistSlice/selector";
@@ -37,8 +36,7 @@ const FishRaceTypeName = () => {
 };
 
 const Fish = () => {
-  const setFishName = useFishActionsName();
-  const setTypeName = useFishActionsType();
+  const { setFishName, setTypeName } = useFishActions();
   return (
     <div>
       <h1>FISH COMPONENT</h1>
