@@ -1,5 +1,10 @@
 "use client";
-import { useFishActions, useFishName, useFishRace } from "@/store/selector";
+import {
+  useFishActionsName,
+  useFishActionsType,
+  useFishName,
+  useFishRace,
+} from "@/store/fistStore/selector";
 import React from "react";
 
 const Bear = () => {
@@ -31,7 +36,8 @@ const FishRaceTypeName = () => {
 };
 
 const Fish = () => {
-  const { setTypeName, setFishName } = useFishActions();
+  const setFishName = useFishActionsName();
+  const setTypeName = useFishActionsType();
   return (
     <div>
       <h1>FISH COMPONENT</h1>
@@ -56,6 +62,7 @@ const Fish = () => {
 export default function Home() {
   return (
     <main data-testid="mirza">
+      test
       <Bear />
       <br />
       <Fish />

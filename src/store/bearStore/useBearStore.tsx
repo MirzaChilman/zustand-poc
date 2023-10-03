@@ -1,4 +1,4 @@
-import { ImmerStateCreator } from "./useStore";
+import { ImmerStateCreator } from "../useStore";
 
 export interface BearStore {
   name: string;
