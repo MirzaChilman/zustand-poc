@@ -8,8 +8,10 @@ export interface FishSlice {
       name: string;
     };
   };
-  setTypeName: (name: string) => void;
-  setFishName: (name: string) => void;
+  actions: {
+    setTypeName: (name: string) => void;
+    setFishName: (name: string) => void;
+  };
 }
 
 export const useFishSlice: ImmerStateCreator<FishSlice> = (set, ...rest) => {
@@ -22,15 +24,17 @@ export const useFishSlice: ImmerStateCreator<FishSlice> = (set, ...rest) => {
         name: "fish",
       },
     },
-    setTypeName: (name: string) => {
-      set((state) => {
-        state.fish.race.type.name = name;
-      });
-    },
-    setFishName: (name: string) => {
-      set((state) => {
-        state.fish.name = name;
-      });
+    actions: {
+      setTypeName: (name: string) => {
+        set((state) => {
+          state.fish.race.type.name = name;
+        });
+      },
+      setFishName: (name: string) => {
+        set((state) => {
+          state.fish.name = name;
+        });
+      },
     },
   };
 };
